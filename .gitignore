@@ -1,2 +1,9 @@
+*.log
+*.pot
+*.pyc
+*~
+__pycache__/
+local_settings.py
 myvenv
 resumo_pat1.md
+db.sqlite3
