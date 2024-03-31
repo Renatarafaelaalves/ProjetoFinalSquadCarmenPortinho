@@ -7,9 +7,6 @@ class HitoricoSaude(models.Model):
     castrado = models.CharField(max_length=1, choices=choices_castracao, default='N')
     vacinas = models.CharField(max_length=200)
     idas_vet = models.TextField()
-
-    def __str__(self):
-        return f'{self.castrado}'
     
 
 class Animal(models.Model):
