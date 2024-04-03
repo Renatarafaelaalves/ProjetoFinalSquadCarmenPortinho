@@ -21,4 +21,4 @@ class StatusAdocaoAdmin(admin.ModelAdmin):
 
 @admin.register(FeedbackAdocao)
 class FeedbackAdocaoAdmin(admin.ModelAdmin):
-    list_display = ['adocao', 'comentario']
+    list_display = ['', 'comentario']
