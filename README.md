@@ -44,11 +44,39 @@ interface de administração do Django.
 
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Instalação
 
-Instruções sobre como instalar o projeto na sua máquina.
+Antes de começar, será necessário ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Python](https://www.python.org/). 
+Além disto é bom ter uma IDE, sugerimos o [VS Code](https://code.visualstudio.com/)
+
+```bash
+
+# Clonar o repositório
+git clone https://github.com/Renatarafaelaalves/ProjetoFinalSquadCarmenPortinho
+
+# Criar ambiente virtual
+python -m venv myvenv
+
+# Ativar ambiente virtual
+.\myvenv\Scripts\activate
+
+# Instalar as dependências
+pip install -r requirements.txt
+
+# Criar arquivo de banco de dados SQLite 
+python manage.py migrate
+
+```
 
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Como Usar
 
-Instruções sobre como usar o projeto.
+Instruções para rodar e utilizar a aplicação.
+
+``` bash
+# Rodar aplicação
+python manage.py runserver
+
+
+```
 
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Exemplos
 
