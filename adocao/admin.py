@@ -10,10 +10,6 @@ class AdocaoAdmin(admin.ModelAdmin):
 class PerfilAdotanteAdmin(admin.ModelAdmin):
     list_display = ['usuario', 'endereco', 'telefone']
 
-@admin.register(FormularioAdocao)
-class FormularioAdocaoAdmin(admin.ModelAdmin):
-    list_display = ['adotante', 'motivo', 'experiencia_anterior', 'outros_animais']
-
 @admin.register(StatusAdocao)
 class StatusAdocaoAdmin(admin.ModelAdmin):
     list_display = ['animal', 'status']
