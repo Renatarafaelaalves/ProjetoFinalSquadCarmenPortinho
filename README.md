@@ -72,6 +72,9 @@ python manage.py migrate
 Instruções para rodar e utilizar a aplicação.
 
 ``` bash
+# Para criar um SuperUser
+python manage.py createsuperuser
+
 # Rodar aplicação
 python manage.py runserver
 
