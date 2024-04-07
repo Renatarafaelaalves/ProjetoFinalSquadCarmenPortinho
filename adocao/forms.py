@@ -1,8 +1,8 @@
-from django.contrib import admin
-from .models import FormularioAdocao
+from django import forms
+from .models import SolicitacaoAdocao
 
-class FormularioAdocaoAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'email', 'telefone', 'mensagem')  
-
-admin.site.register(FormularioAdocao, FormularioAdocaoAdmin)
-
+class SolicitacaoAdocaoForm(forms.ModelForm):
+    class Meta:
+        model = SolicitacaoAdocao
+        fields = ['nome', 'email', 'endereco', 'outros_animais', 'animal']
+        widgets = {'status': forms.TextInput(attrs={'disabled': 'disabled'})}

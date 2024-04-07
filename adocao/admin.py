@@ -1,20 +1,23 @@
 from django.contrib import admin
-from .models import Adocao, PerfilAdotante, FormularioAdocao, StatusAdocao, FeedbackAdocao
+from .models import SolicitacaoAdocao
 
-@admin.register(Adocao)
-class AdocaoAdmin(admin.ModelAdmin):
-    list_display = ['data_adocao', 'animal', 'adotante', 'adocao_bemsucedida']
-    list_filter = ['data_adocao', 'adocao_bemsucedida']
+@admin.register(SolicitacaoAdocao)
+class SolicitacaoAdocaoAdmin(admin.ModelAdmin):
+    list_display = ['nome', 'animal_nome', 'status', 'data']
+    search_fields = ['nome', 'animal' 'status']
+    list_filter = ['data']
+    list_editable = ['status']
 
-@admin.register(PerfilAdotante)
-class PerfilAdotanteAdmin(admin.ModelAdmin):
-    list_display = ['usuario', 'endereco', 'telefone']
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
+        if obj.status == 'Aprovada':
+            obj.animal.adotado = True
+            obj.animal.save()
+        elif obj.status == 'Recusada':
+            obj.animal.adotado = False
+            obj.animal.save()
+            obj.aprovado_por = None
+            obj.save()
 
-@admin.register(StatusAdocao)
-class StatusAdocaoAdmin(admin.ModelAdmin):
-    list_display = ['animal', 'status']
-    list_filter = ['status']
-
-@admin.register(FeedbackAdocao)
-class FeedbackAdocaoAdmin(admin.ModelAdmin):
-    list_display = ['adocao', 'comentario']
+    def animal_nome(self, obj):
+        return obj.animal.nome

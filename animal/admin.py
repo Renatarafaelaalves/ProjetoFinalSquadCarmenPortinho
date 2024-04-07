@@ -8,6 +8,6 @@ class HistoricoSaudeAdmin(admin.ModelAdmin):
 
 @admin.register(Animal)
 class AnimalAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'especie', 'idade', 'raca', 'data_cadastro', 'historico_saude']
+    list_display = ['nome', 'especie', 'idade', 'raca','sexo', 'data_cadastro', 'adotado']
     search_fields = ['especie','idade', 'raca']
     list_filter = ['data_cadastro']

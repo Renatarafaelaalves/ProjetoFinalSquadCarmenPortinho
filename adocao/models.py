@@ -1,30 +1,30 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Adocao(models.Model):
-    data_adocao = models.DateField()
-    animal = models.ForeignKey('animal.Animal', on_delete=models.CASCADE)
-    adotante = models.ForeignKey('PerfilAdotante', on_delete=models.CASCADE)
-    adocao_bemsucedida = models.BooleanField(default=False)
+class SolicitacaoAdocao(models.Model):
 
-class PerfilAdotante(models.Model):
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    STATUS_CHOICES = (
+        ('Pendente', 'Pendente'),
+        ('Aprovada', 'Aprovada'),
+        ('Recusada', 'Recusada'),
+    )
+
+    nome = models.CharField(max_length=50)
+    email = models.EmailField(max_length=75)
     endereco = models.CharField(max_length=100)
-    telefone = models.CharField(max_length=20)
-
-class StatusAdocao(models.Model):
+    outros_animais = models.IntegerField(default=0)
     animal = models.ForeignKey('animal.Animal', on_delete=models.CASCADE)
-    status = models.CharField(max_length=20)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Pendente')
+    aprovado_por = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    data = models.DateTimeField(auto_now_add=True)
 
-class FeedbackAdocao(models.Model):
-    adocao = models.OneToOneField('Adocao', on_delete=models.CASCADE)
-    comentario = models.TextField()
+    def __str__(self):
+        return f'{self.nome}[{self.email}]'
 
-class FormularioAdocao(models.Model):
-    nome = models.CharField(max_length=100)
-    email = models.EmailField()
-    telefone = models.CharField(max_length=20)
-    mensagem = models.TextField()
-
-
-
+    def __str__(self):
+        return f"Solicitação de Adoção de {self.animal.nome} por {self.nome} realizada com sucesso, aguardando aprovação."
+    
+    class Meta:
+        verbose_name = 'Solicitação de adoção'
+        verbose_name_plural = 'Solicitações de adoção'
+        ordering = ['-data']

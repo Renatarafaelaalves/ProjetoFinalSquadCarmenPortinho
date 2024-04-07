@@ -1,34 +1,21 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from adocao.forms import SolicitacaoAdocaoForm
 from animal.models import Animal
-from .forms import FormularioAdocao
 
-def lista_animais(request):
-    animais = Animal.objects.all()
-    return render(request, 'adocao/lista_animais.html', {'animais': animais})
-
-def detalhes_animal(request, animal_id):
-    animal = get_object_or_404(Animal, pk=animal_id)
-    return render(request, 'adocao/detalhes_animal.html', {'animal': animal})
-
-def confirmacao_adocao(request):
-    return render(request, 'adocao/confirmacao_adocao.html')
-
-def home_adocao(request):
-    animais = Animal.objects.all()  
-    return render(request, 'adocao/home_adocao.html', {'animais': animais})
-
-def mostrar_adocao(request):
-    animais = Animal.objects.all()
-    return render(request, 'adocao/mostrar_adocao.html', {'animais': animais})
-
-def adotar_animal(request):
+def solicitar_adocao(request):
+    animais_disponiveis = Animal.objects.filter(adotado=False)
     if request.method == 'POST':
-        form = FormularioAdocao(request.POST)
+        form = SolicitacaoAdocaoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('confirmacao_adocao')
+            messages.success(request, 'Solicitação de adoção enviada com sucesso!')
+            return redirect('animais:listar_animais')
     else:
-        form = FormularioAdocao()
-    
-    return render(request, 'adocao/adotar_animal.html', {'form': form})
+        form = SolicitacaoAdocaoForm()
 
+    contexto = {
+        'form': form,
+        'animais_disponiveis': animais_disponiveis,
+    }
+    return render(request, 'solicitar_adocao.html', contexto)
