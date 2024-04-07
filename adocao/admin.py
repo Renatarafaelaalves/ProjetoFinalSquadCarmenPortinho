@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CustomUser, SolicitacaoAdocao
+from adocao.models import CustomUser, SolicitacaoAdocao
 
 @admin.register(CustomUser)
 class AdotanteAdmin(admin.ModelAdmin):
