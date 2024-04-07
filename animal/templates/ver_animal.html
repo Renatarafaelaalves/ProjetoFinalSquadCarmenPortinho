@@ -28,6 +28,11 @@
                             {%endif%}
                           
                         </div>
+
+                        <div class="col-md-9">
+                            <span class="span-bold">Sexo:</span>
+                            <p>{{animal.sexo}}</p>
+                        </div>
                     </div>  
                     <br>
                     <div class="row">
@@ -66,8 +71,7 @@
                             {%endif%}
                             
                             <br>
-                            <a href="#" class="btn btn-success btn-lg">SOLICITAR ADOÇÃO</a>
-                            
+                            <a href="{% url 'adocao:solicitar_adocao' %}" class="btn btn-success btn-lg">SOLICITAR ADOÇÃO</a>
                         </div>
 
                         <div class="col-md">

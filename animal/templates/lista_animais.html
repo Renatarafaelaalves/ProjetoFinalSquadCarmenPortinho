@@ -15,7 +15,7 @@
                 <div class="col-md">
                     <div class="wrapper">
                         <div class="box width80">
-                            <h3 class="font-vinho">Conheçam nossos bichinhos</h3>
+                            <h3 class="font-vinho">Conheça nossos bichinhos</h3>
                             <hr>
                              <table class="tabela" cellpadding="20">
                                 <tr>
@@ -34,6 +34,9 @@
                                         </td>
                                         <td>
                                             {{animal.idade}}
+                                        </td>
+                                        <td>                       
+                                            <a href="{% url 'animais:ver_animal' id_animal=animal.id %}" class="btn btn-success btn-lg">VER DETALHES</a>
                                         </td>
                                     </tr>
                                 {% endfor %}

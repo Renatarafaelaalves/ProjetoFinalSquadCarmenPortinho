@@ -2,7 +2,7 @@ from django.shortcuts import render
 from animal.models import Animal
 
 def listar_animais(request):
-    animais = Animal.objects.all()
+    animais = Animal.objects.filter(adotado=False)
     contexto = {
         'animais': animais,
     }
