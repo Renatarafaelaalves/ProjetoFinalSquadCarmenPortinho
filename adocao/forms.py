@@ -1,11 +1,11 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from .models import SolicitacaoAdocao, CustomUser
+from .models import Adotante, SolicitacaoAdocao
 
-class AdotanteForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = CustomUser
-        fields = ['username', 'email', 'endereco', 'outros_animais']
+class AdotanteForm(forms.ModelForm):
+    class Meta:
+        model = Adotante
+        fields = ['nome', 'email', 'senha', 'endereco', 'outros_animais']
+        widgets = {'senha': forms.PasswordInput()}
 
 
 class SolicitacaoAdocaoForm(forms.ModelForm):

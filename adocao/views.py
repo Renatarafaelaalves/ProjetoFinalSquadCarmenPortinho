@@ -26,7 +26,6 @@ def cadastro_adotante(request):
     }
     return render(request, 'cadastro_adotante.html', contexto)
 
-@login_required
 def solicitar_adocao(request):
     sucesso = False
     if request.method == 'POST':
@@ -50,7 +49,6 @@ def solicitar_adocao(request):
 def confirmacao_adocao(request):
     return render(request, 'confirmacao_adocao.html')
 
-@login_required
 def consultar_status(request):
     status = SolicitacaoAdocao.objects.filter(adotante=request.user)
     return render(request, 'consultar_status.html', {'status': status})

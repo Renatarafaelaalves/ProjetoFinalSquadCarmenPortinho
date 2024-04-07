@@ -1,16 +1,16 @@
 from django.contrib import admin
-from adocao.models import CustomUser, SolicitacaoAdocao
+from .models import Adotante, SolicitacaoAdocao
 
-@admin.register(CustomUser)
+@admin.register(Adotante)
 class AdotanteAdmin(admin.ModelAdmin):
-    list_display = ['username', 'email', 'endereco', 'outros_animais']
-    search_fields = ['username', 'email']
-    list_filter = ['username']
+    list_display = ['nome', 'email', 'data']
+    search_fields = ['nome', 'email']
+    list_filter = ['data']
 
 @admin.register(SolicitacaoAdocao)
 class SolicitacaoAdocaoAdmin(admin.ModelAdmin):
-    list_display = ['adotante_username', 'animal_nome', 'status', 'data_adocao','aprovador_por_username']
-    search_fields = ['adotante__username', 'status']
+    list_display = ['adotante_nome', 'animal_nome', 'status', 'data_adocao','aprovador_por_username']
+    search_fields = ['adotante_nome', 'status']
     list_filter = ['data_adocao']
     list_editable = ['status']
 
@@ -19,8 +19,8 @@ class SolicitacaoAdocaoAdmin(admin.ModelAdmin):
             obj.aprovado_por = request.user
         obj.save()
 
-    def adotante_username(self, obj):
-        return obj.adotante.username
+    def adotante_nome(self, obj):
+        return obj.adotante.nome
     
     def animal_nome(self, obj):
         return obj.animal.nome
