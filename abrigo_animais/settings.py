@@ -37,7 +37,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'animal', 'templates'),  # Adicione esta linha
+            os.path.join(BASE_DIR, 'animal', 'templates'),
+            os.path.join(BASE_DIR, 'adocao', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -92,3 +93,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+AUTH_USER_MODEL = 'adocao.CustomUser'
+
+LOGIN_REDIRECT_URL = '/adocao/home_adocao/'
+
+LOGIN_URL = '/adocao/login/'

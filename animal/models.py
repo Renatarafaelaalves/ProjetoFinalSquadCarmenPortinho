@@ -16,3 +16,4 @@ class Animal(models.Model):
     raca = models.CharField(max_length=100)
     data_cadastro = models.DateTimeField(auto_now_add=True)
     historico_saude = models.ForeignKey(HitoricoSaude, on_delete=models.CASCADE)
+    adotado = models.BooleanField(default=False)

@@ -1,8 +1,15 @@
-from django.contrib import admin
-from .models import FormularioAdocao
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from .models import SolicitacaoAdocao, CustomUser
 
-class FormularioAdocaoAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'email', 'telefone', 'mensagem')  
+class AdotanteForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = CustomUser
+        fields = ['username', 'email', 'endereco', 'outros_animais']
 
-admin.site.register(FormularioAdocao, FormularioAdocaoAdmin)
 
+class SolicitacaoAdocaoForm(forms.ModelForm):
+    class Meta:
+        model = SolicitacaoAdocao
+        fields = ['animal', 'adotante', 'status', 'aprovado_por']
+        widgets = {'status': forms.TextInput(attrs={'disabled': 'disabled'})}

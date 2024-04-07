@@ -1,20 +1,29 @@
 from django.contrib import admin
-from .models import Adocao, PerfilAdotante, FormularioAdocao, StatusAdocao, FeedbackAdocao
+from .models import CustomUser, SolicitacaoAdocao
 
-@admin.register(Adocao)
-class AdocaoAdmin(admin.ModelAdmin):
-    list_display = ['data_adocao', 'animal', 'adotante', 'adocao_bemsucedida']
-    list_filter = ['data_adocao', 'adocao_bemsucedida']
+@admin.register(CustomUser)
+class AdotanteAdmin(admin.ModelAdmin):
+    list_display = ['username', 'email', 'endereco', 'outros_animais']
+    search_fields = ['username', 'email']
+    list_filter = ['username']
 
-@admin.register(PerfilAdotante)
-class PerfilAdotanteAdmin(admin.ModelAdmin):
-    list_display = ['usuario', 'endereco', 'telefone']
+@admin.register(SolicitacaoAdocao)
+class SolicitacaoAdocaoAdmin(admin.ModelAdmin):
+    list_display = ['adotante_username', 'animal_nome', 'status', 'data_adocao','aprovador_por_username']
+    search_fields = ['adotante__username', 'status']
+    list_filter = ['data_adocao']
+    list_editable = ['status']
 
-@admin.register(StatusAdocao)
-class StatusAdocaoAdmin(admin.ModelAdmin):
-    list_display = ['animal', 'status']
-    list_filter = ['status']
+    def salvar_status(self, request, obj):
+        if obj.status in ['Aprovada', 'Recusada'] and not obj.aprovado_por:
+            obj.aprovado_por = request.user
+        obj.save()
 
-@admin.register(FeedbackAdocao)
-class FeedbackAdocaoAdmin(admin.ModelAdmin):
-    list_display = ['adocao', 'comentario']
+    def adotante_username(self, obj):
+        return obj.adotante.username
+    
+    def animal_nome(self, obj):
+        return obj.animal.nome
+    
+    def aprovador_por_username(self, obj):
+        return obj.aprovador_por.username if obj.aprovador_por else '-'

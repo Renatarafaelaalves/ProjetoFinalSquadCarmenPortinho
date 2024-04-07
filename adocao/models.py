@@ -1,30 +1,30 @@
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User
 
-class Adocao(models.Model):
-    data_adocao = models.DateField()
-    animal = models.ForeignKey('animal.Animal', on_delete=models.CASCADE)
-    adotante = models.ForeignKey('PerfilAdotante', on_delete=models.CASCADE)
-    adocao_bemsucedida = models.BooleanField(default=False)
-
-class PerfilAdotante(models.Model):
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+class CustomUser(AbstractUser):
     endereco = models.CharField(max_length=100)
-    telefone = models.CharField(max_length=20)
+    outros_animais = models.IntegerField(default=0)
 
-class StatusAdocao(models.Model):
+    def __str__(self):
+        return self.username
+    
+    class Meta:
+        verbose_name = 'Cadastro de adotante'
+        verbose_name_plural = 'Cadastro de adotantes'
+
+class SolicitacaoAdocao(models.Model):
+    STATUS_CHOICES = (
+        ('Pendente', 'Pendente'),
+        ('Aprovada', 'Aprovada'),
+        ('Recusada', 'Recusada'),
+    )
+
+    data_adocao = models.DateField(auto_now_add=True)
     animal = models.ForeignKey('animal.Animal', on_delete=models.CASCADE)
-    status = models.CharField(max_length=20)
+    adotante = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='solicitacoes_de_adocao')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Pendente')
+    aprovado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='aprovacoes_de_adocao')
 
-class FeedbackAdocao(models.Model):
-    adocao = models.OneToOneField('Adocao', on_delete=models.CASCADE)
-    comentario = models.TextField()
-
-class FormularioAdocao(models.Model):
-    nome = models.CharField(max_length=100)
-    email = models.EmailField()
-    telefone = models.CharField(max_length=20)
-    mensagem = models.TextField()
-
-
-
+    def __str__(self):
+        return f"Solicitação de Adoção de {self.animal.nome} por {self.adotante.username} realizada com sucesso, aguardando aprovação."
