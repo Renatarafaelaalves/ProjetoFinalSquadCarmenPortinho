@@ -1,15 +1,8 @@
 from django import forms
-from .models import Adotante, SolicitacaoAdocao
-
-class AdotanteForm(forms.ModelForm):
-    class Meta:
-        model = Adotante
-        fields = ['nome', 'email', 'senha', 'endereco', 'outros_animais']
-        widgets = {'senha': forms.PasswordInput()}
-
+from .models import SolicitacaoAdocao
 
 class SolicitacaoAdocaoForm(forms.ModelForm):
     class Meta:
         model = SolicitacaoAdocao
-        fields = ['animal', 'adotante', 'status', 'aprovado_por']
+        fields = ['nome', 'email', 'endereco', 'outros_animais', 'animal']
         widgets = {'status': forms.TextInput(attrs={'disabled': 'disabled'})}
