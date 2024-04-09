@@ -14,6 +14,6 @@ def ver_animal(request, id_animal):
 
 def pagina_inicial(request):
     animais = Animal.objects.all()
-    return render(request, 'seuapp/index.html', {'animais': animais})
+    return render(request, 'animais.html', {'animais': animais})
 
 
