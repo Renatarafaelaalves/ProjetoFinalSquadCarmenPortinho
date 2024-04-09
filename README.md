@@ -5,11 +5,10 @@ Projeto final realizado no Bootcamp Back-end Python e Django da [WomakersCode](h
 
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Índice <a name="retornar-ao-índice"></a>
 - [Estrutura e Requisitos](#estruturas-e-requisitos)
-    - [1. Especificações Técnicas](#1-especificações-técnicas)
-    - [2. Funcionalidades do Abrigo](#2-funcionalidades-do-abrigo)
-    - [3. Extra](#3-extra)
-    - [4. Administração do Django](#4-administração-do-django)
 - [Instalação](#instalação)
+- [Como Usar](#como-usar)
+- [Exemplos](#exemplos)
+- [Integrantes](#integrantes)
 
 
 
@@ -67,12 +66,14 @@ python manage.py migrate
 
 ```
 
+[![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
+
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Como Usar
 
-Instruções para rodar e utilizar a aplicação.
+Sugestão para visualizar o banco de dados: Extensão `SQLite Viewer` do VSCode
 
 ``` bash
-# Para criar um SuperUser
+# Para criar um SuperUser e ter acesso ao /admin
 python manage.py createsuperuser
 
 # Rodar aplicação
@@ -81,11 +82,15 @@ python manage.py runserver
 
 ```
 
+[![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
+
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Exemplos
 
 Exemplos de uso do projeto, com imagens.
 
-## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Integrantes <a name="integrantes"></a>
+[![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
+
+## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Integrantes
 
 <div style="align-itens:center">
 <table>
