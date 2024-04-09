@@ -12,5 +12,6 @@ def ver_animal(request, id_animal):
     animal = Animal.objects.get(id=id_animal)
     return render(request, 'ver_animal.html', {'animal': animal})
 
-def handlig_404(request,  exception):
-    return render(request, 'not_found.html', {})
+def pagina_inicial(request):
+    animais = Animal.objects.all()
+    return render(request, 'animais.html', {'animais': animais})
