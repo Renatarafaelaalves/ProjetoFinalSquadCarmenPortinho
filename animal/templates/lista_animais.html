@@ -35,6 +35,9 @@
                                         <td>
                                             {{animal.idade}}
                                         </td>
+                                        <td>
+                                            <img src="{{ animal.imagem.url }}" alt="Imagem do Animal">
+                                        </td>
                                         <td>                       
                                             <a href="{% url 'animais:ver_animal' id_animal=animal.id %}" class="btn btn-success btn-lg">VER DETALHES</a>
                                         </td>

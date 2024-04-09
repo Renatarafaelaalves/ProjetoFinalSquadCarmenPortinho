@@ -20,6 +20,7 @@ class Animal(models.Model):
     idade = models.IntegerField()
     raca = models.CharField(max_length=100)
     sexo = models.CharField(max_length=1, choices=choices_sexo)
+    imagem = models.ImageField(upload_to='images/', null=True, blank=True)
     data_cadastro = models.DateTimeField(auto_now_add=True)
     historico_saude = models.ForeignKey(HitoricoSaude, on_delete=models.CASCADE)
     adotado = models.BooleanField(default=False)

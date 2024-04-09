@@ -1,4 +1,4 @@
-![Capa](./assets/Carmen-Portinho.png)
+![Capa](./media/images/Carmen-Portinho.png)
 
 # <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="25px;"/> Site para abrigo de animais
 Projeto final realizado no Bootcamp Back-end Python e Django da [WomakersCode](https://womakerscode.org/) pela Squad Carmen Portinho.
