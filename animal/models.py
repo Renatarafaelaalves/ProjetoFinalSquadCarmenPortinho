@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class HitoricoSaude(models.Model):
+class HistoricoSaude(models.Model):
     choices_castracao = (('C', 'Castrado'),
                         ('N', 'Não castrado'))
     castrado = models.CharField(max_length=1, choices=choices_castracao, default='N')
@@ -21,7 +21,7 @@ class Animal(models.Model):
     raca = models.CharField(max_length=100)
     sexo = models.CharField(max_length=1, choices=choices_sexo)
     data_cadastro = models.DateTimeField(auto_now_add=True)
-    historico_saude = models.ForeignKey(HitoricoSaude, on_delete=models.CASCADE)
+    historico_saude = models.ForeignKey(HistoricoSaude, on_delete=models.CASCADE)
     adotado = models.BooleanField(default=False)
 
     class Meta:

@@ -19,9 +19,6 @@ class SolicitacaoAdocao(models.Model):
     data = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.nome}[{self.email}]'
-
-    def __str__(self):
         return f"Solicitação de Adoção de {self.animal.nome} por {self.nome} realizada com sucesso, aguardando aprovação."
     
     class Meta:
