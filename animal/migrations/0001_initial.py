@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='HitoricoSaude',
+            name='HistoricoSaude',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('castrado', models.CharField(choices=[('C', 'Castrado'), ('N', 'Não castrado')], default='N', max_length=1)),
