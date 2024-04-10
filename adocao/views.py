@@ -1,6 +1,7 @@
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from adocao.forms import SolicitacaoAdocaoForm
+from .forms_adocao import SolicitacaoAdocaoForm  # Importe do novo arquivo forms_adocao.py
 from animal.models import Animal
 
 def solicitar_adocao(request):
