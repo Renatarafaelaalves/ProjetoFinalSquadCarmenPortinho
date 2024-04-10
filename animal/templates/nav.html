@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <nav id="NavBar" class="navbar navbar-expand-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
                     <img class="img_nav" src="https://cdn-icons-png.flaticon.com/512/1416/1416823.png" alt="">
@@ -23,9 +23,9 @@
                     <img class="img_nav" src="https://cdn-icons-png.flaticon.com/512/1312/1312640.png" alt="">
                     Adoção
                 </a>
-                <a class="navbar-brand" href="/admin">
-                    <img class="img_nav" src="https://cdn-icons-png.flaticon.com/512/7542/7542190.png" alt="">
-                    Administrativo
+                <a class="navbar-brand" href="{% url 'voluntarios:formulario_voluntario' %}">
+                    <img class="img_nav" src="https://cdn-icons-png.flaticon.com/512/6154/6154169.png" alt="">
+                    Voluntários
                 </a>
                 <form class="d-flex ms-auto">
                     <input class="form-control me-2" type="search" placeholder="Busque seu amigo" aria-label="Search">
