@@ -1,6 +1,19 @@
 from django.shortcuts import render
 from animal.models import Animal
 
+def pagina_inicial(request):
+    if 'especie' in request.GET:
+        especie = request.GET.get('especie', '')
+
+        animais = Animal.objects.filter(especie__icontains=especie)
+    else:
+        animais = Animal.objects.all()
+
+    contexto = {
+        'animais': animais,
+    }
+    return render(request, 'animais.html', contexto)
+
 def listar_animais(request):
     animais = Animal.objects.filter(adotado=False)
     contexto = {
@@ -12,6 +25,5 @@ def ver_animal(request, id_animal):
     animal = Animal.objects.get(id=id_animal)
     return render(request, 'ver_animal.html', {'animal': animal})
 
-def pagina_inicial(request):
-    animais = Animal.objects.all()
-    return render(request, 'home.html', {'animais': animais})
+
+
