@@ -12,7 +12,7 @@ def pagina_inicial(request):
     contexto = {
         'animais': animais,
     }
-    return render(request, 'animais.html', contexto)
+    return render(request, 'home.html', contexto)
 
 def listar_animais(request):
     animais = Animal.objects.filter(adotado=False)
