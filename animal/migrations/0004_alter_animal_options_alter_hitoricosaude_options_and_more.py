@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             options={'ordering': ['nome'], 'verbose_name': 'Animal', 'verbose_name_plural': 'Animais'},
         ),
         migrations.AlterModelOptions(
-            name='hitoricosaude',
+            name='historicosaude',
             options={'verbose_name': 'Histórico de saúde', 'verbose_name_plural': 'Histórico de saúde'},
         ),
         migrations.AddField(

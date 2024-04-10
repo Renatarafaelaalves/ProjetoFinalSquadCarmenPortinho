@@ -1,8 +1,8 @@
 from django.contrib import admin
-from animal.models import HitoricoSaude, Animal
+from animal.models import HistoricoSaude, Animal
 
 # Register your models here.
-@admin.register(HitoricoSaude)
+@admin.register(HistoricoSaude)
 class HistoricoSaudeAdmin(admin.ModelAdmin):
     list_display = ['castrado', 'vacinas', 'idas_vet']
 
