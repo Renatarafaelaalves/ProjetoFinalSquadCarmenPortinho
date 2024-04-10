@@ -6,5 +6,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('adocao/', include('adocao.urls', namespace='adocao')),  
-    path('animais/', include('animal.urls', namespace='animais')),    
+    path('animais/', include('animal.urls', namespace='animais')),
+    path('voluntarios/', include('voluntarios.urls', namespace='voluntarios')),      
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

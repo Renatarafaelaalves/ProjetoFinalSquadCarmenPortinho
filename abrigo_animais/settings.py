@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'animal',
     'adocao',
+    'voluntarios',
 ]
 
 MIDDLEWARE = [
@@ -39,6 +40,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'animal', 'templates'),
             os.path.join(BASE_DIR, 'adocao', 'templates'),
+            os.path.join(BASE_DIR, 'voluntarios', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
