@@ -1,18 +1,16 @@
 from django.shortcuts import render
 from animal.models import Animal
 
-def pagina_inicial(request):
+def pagina_inicial(request):    
     if 'especie' in request.GET:
         especie = request.GET.get('especie', '')
-
         animais = Animal.objects.filter(especie__icontains=especie)
-    else:
-        animais = Animal.objects.all()
-
-    contexto = {
-        'animais': animais,
-    }
-    return render(request, 'home.html', contexto)
+        contexto = {
+            'animais': animais,
+        }
+        return render(request, 'lista_animais.html', contexto)
+    
+    return render(request, 'home.html')
 
 def listar_animais(request):
     animais = Animal.objects.filter(adotado=False)
