@@ -1,0 +1,21 @@
+
+body {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #FBA834;
+    background-color: rgb(243, 243, 235);
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px; 
+    font-family: "Tilt Neon", sans-serif !important ;
+    font-size: 20px;
+}
+
+.btn-primary {
+    background-color: red; /* Change the background color */
+    border-color: red; /* Change the border color */
+    color: white; /* Change the text color */
+}

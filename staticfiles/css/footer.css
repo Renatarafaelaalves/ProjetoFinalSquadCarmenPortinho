@@ -1,0 +1,14 @@
+.rodape {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+
+}
+
+.rodape .container-rodape {
+    background-color: aqua;
+}
+
+.rodape a {
+    font-size: 24px;
+}
