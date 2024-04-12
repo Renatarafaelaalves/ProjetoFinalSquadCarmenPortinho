@@ -13,7 +13,12 @@ def pagina_inicial(request):
     return render(request, 'home.html')
 
 def listar_animais(request):
+    especies = request.GET.get('especie') 
     animais = Animal.objects.filter(adotado=False)
+    
+    if especies:
+        animais = animais.filter(especie=especies)
+
     contexto = {
         'animais': animais,
     }
