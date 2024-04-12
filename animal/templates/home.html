@@ -29,7 +29,7 @@
         <p>A Equipe do Abrigo Mi Au Amigo</p>
     </div>
 
-    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide d-none d-md-block">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -41,7 +41,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5 class="titulo">Conheça seu novo Mi Au Amigo</h5>
               <p>No Abrigo Mi Au Amigo, acreditamos que cada patinha merece amor, cuidado e um lar para chamar de seu.</p>
-              <button class="button" type="button"><a href="/listar_animais">Ver mais</a></button>
+              <button class="buttons" type="button"><a href="/listar_animais">Ver mais</a></button>
             </div>
           </div>
           <div class="carousel-item" data-bs-interval="2000">
@@ -49,7 +49,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5 class="titulo">Torne-se um voluntário</h5>
               <p>Junte-se a nós para fazer a diferença na vida de nossos amigos peludos!</p>
-              <button class="button" type="button"><a href="{% url 'voluntarios:formulario_voluntario' %}">Ver mais</a></button>
+              <button class="buttons" type="button"><a href="{% url 'voluntarios:formulario_voluntario' %}">Ver mais</a></button>
             </div>
           </div>
           <div class="carousel-item">
@@ -57,7 +57,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5 class="titulo">Adote um Mi Au Amigo agora</h5>
               <p>Nossa missão é fornecer um ambiente seguro e acolhedor para animais que precisam de uma segunda chance.</p>
-              <button class="button" type="button"><a href="/adocao">Ver mais</a></button>
+              <button class="buttons" type="button"><a href="/adocao">Ver mais</a></button>
             </div>
           </div>
         </div>
