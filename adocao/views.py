@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms_adocao import SolicitacaoAdocaoForm  # Importe do novo arquivo forms_adocao.py

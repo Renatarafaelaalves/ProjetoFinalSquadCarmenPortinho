@@ -35,7 +35,12 @@
     font-family: var(--fonte);
 }
 
-.button {
+.buttons {
+    border-radius: 15px;
+    background-color: #FBA834;
+    border-color: #FBA834;
+}
+
+.buttons a{
     text-decoration: none;
-    border-radius: 50px;
 }
