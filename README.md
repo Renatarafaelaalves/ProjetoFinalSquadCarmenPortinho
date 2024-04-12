@@ -19,24 +19,13 @@ Projeto final realizado no Bootcamp Back-end Python e Django da [WomakersCode](h
 - Controle de Versão com Git;
 - Design Responsivo;
 - Banco de Dados;
-- Modelos Django: Modelos Django que representem os animais, seus registros, históricos de adoção, além de informações sobre os cuidadores e voluntários.
+- Modelos Django: Modelos Django que representem os animais, seus registros, históricos de adoção, além de informações sobre os voluntários.
 
 #### 2. Funcionalidades do Abrigo
 - Página Inicial: Exibir todos os animais disponíveis para adoção;
 - Páginas de Detalhes: Visualização individual dos animais, incluindo informações como nome, espécie, idade, raça, histórico de saúde e imagens;
 - Gestão de Adoções: Os interessados podem solicitar a adoção de um animal e os responsáveis pelo abrigo podem aprovar ou recusar as solicitações;
-- Barra de Pesquisa: Barra de pesquisa que permita aos usuários procurar animais disponíveis para adoção por palavras-chave, espécie, raça, etc.
-
-#### 3. Extra
-- Gerenciamento de Cuidadores e Voluntários: Cadastrar e gerenciar informações de cuidadores e voluntários que contribuem com o abrigo.
-
-#### 4. Administração do Django
-- Interface de Administração: Garantir que os administradores do abrigo possam gerenciar facilmente todas as informações relacionadas aos animais e ao funcionamento do abrigo usando a
-interface de administração do Django.
-
-#### 5. Publique seu site
-- O projeto deve ser entregue e hospedado em um servidor acessível publicamente.
-
+- Barra de Pesquisa: Barra de pesquisa que permita aos usuários procurar animais disponíveis para adoção.
 
 [![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
 
@@ -45,7 +34,7 @@ interface de administração do Django.
 
 Antes de começar, será necessário ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Python](https://www.python.org/). 
-Além disto é bom ter uma IDE, sugerimos o [VS Code](https://code.visualstudio.com/)
+Além disto é bom ter uma IDE, sugerimos o [VS Code](https://code.visualstudio.com/).
 
 ```bash
 
@@ -78,9 +67,9 @@ python manage.py createsuperuser
 
 # Rodar aplicação
 python manage.py runserver
-
-
 ```
+
+
 
 [![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
 

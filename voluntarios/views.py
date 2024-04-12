@@ -11,8 +11,7 @@ def formulario_voluntario(request):
         form = FormularioVoluntarioForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Solicitação de adoção enviada com sucesso!')
-            return redirect('animais')
+            return render(request, 'cadastro.html', {'alerta_sucesso': True})
     else:
         form = FormularioVoluntarioForm()
     contexto = {

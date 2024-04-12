@@ -12,8 +12,7 @@ def solicitar_adocao(request):
         form = SolicitacaoAdocaoForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Solicitação de adoção enviada com sucesso!')
-            return redirect('animais:listar_animais')
+            return render(request, 'solicitar_adocao.html', {'alerta_sucesso': True})
     else:
         form = SolicitacaoAdocaoForm()
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitação de voluntáriado</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6154/6154169.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 </head>
 <body>
     {% include 'nav.html' %}
@@ -50,7 +51,15 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
-    
+
+    {% if alerta_sucesso %}
+    <script>
+        window.onload = function() {
+            alert('Cadastro realizado com sucesso!  Em breve entraremos em contato com você!');
+        }
+    </script>
+    {% endif %}
+
 </body>
 </html>
 

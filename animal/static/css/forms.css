@@ -9,12 +9,12 @@ body {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 5px; 
-    font-family: "Tilt Neon", sans-serif !important ;
+    font-family: "Tilt Neon", sans-serif;
     font-size: 20px;
 }
 
 .btn-primary {
-    background-color: red; /* Change the background color */
-    border-color: red; /* Change the border color */
-    color: white; /* Change the text color */
+    background-color: red;
+    border-color: red;
+    color: white;
 }
