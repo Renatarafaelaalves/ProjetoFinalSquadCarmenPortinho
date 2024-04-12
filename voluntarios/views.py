@@ -12,7 +12,7 @@ def formulario_voluntario(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Solicitação de adoção enviada com sucesso!')
-            return redirect('animais')
+            return redirect('/voluntarios')
     else:
         form = FormularioVoluntarioForm()
     contexto = {

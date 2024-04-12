@@ -14,6 +14,10 @@ body {
     font-size: 20px;
 }
 
+img{
+    width: 20px;
+}
+
 .btn-primary {
     background-color: red; /* Change the background color */
     border-color: red; /* Change the border color */
