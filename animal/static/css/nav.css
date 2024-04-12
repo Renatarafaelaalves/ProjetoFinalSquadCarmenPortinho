@@ -1,0 +1,48 @@
+* {
+    cursor:url(../media/pata.cur), auto;
+  }
+
+.img_nav{
+    width: 5vh;
+    height: 5vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 10vh;
+  flex-direction: row;
+  font-family: "Tilt Neon", sans-serif;
+
+}
+
+.navbar .navbar_class{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FBA834;
+    width: 100%;
+}
+
+.navbar a {
+  font-size: 24px;
+  color: #333A73;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.navbar a:hover {
+  font-size: 24px;
+  background-color: #333A73;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 25px;
+}
+
+#btn_procurar{
+  background-color: #333A73;
+  color: #fff;
+  border-radius: 25px;
+  border-color: #333A73;
+}

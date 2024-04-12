@@ -1,0 +1,46 @@
+:root {
+    --background-color: #F4EDCC;
+    --amarelo: #FBA834;
+    --azul-escuro: #333A73;
+    --azul-medio: #387ADF;
+    --azul-claro: #50C4ED;
+    --fonte: "Tilt Neon", sans-serif;
+}
+
+.titulo {
+    color: var(--amarelo);
+    text-align: center;
+    font-family: var(--fonte);
+    margin: 5vh;
+}
+
+.texto {
+    color: var(--azul-escuro);
+    margin: 10vh;
+    text-align: justify;
+    font-family: var(--fonte);
+    font-size: 20px;
+}
+
+.imagem {
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: var(--azul-escuro);
+    border-radius: 50px;
+    margin: 20vh 15vw;
+    font-family: var(--fonte);
+}
+
+.buttons {
+    border-radius: 15px;
+    background-color: #FBA834;
+    border-color: #FBA834;
+}
+
+.buttons a{
+    text-decoration: none;
+}
