@@ -9,6 +9,7 @@ Projeto final realizado no Bootcamp Back-end Python e Django da [WomakersCode](h
 - [Como Usar](#como-usar)
 - [Exemplos](#exemplos)
 - [Integrantes](#integrantes)
+- [Deploy](#deploy)
 
 
 
@@ -37,7 +38,6 @@ Antes de começar, será necessário ter instalado em sua máquina as seguintes 
 Além disto é bom ter uma IDE, sugerimos o [VS Code](https://code.visualstudio.com/).
 
 ```bash
-
 # Clonar o repositório
 git clone https://github.com/Renatarafaelaalves/ProjetoFinalSquadCarmenPortinho
 
@@ -52,7 +52,6 @@ pip install -r requirements.txt
 
 # Criar arquivo de banco de dados SQLite 
 python manage.py migrate
-
 ```
 
 [![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
@@ -70,14 +69,62 @@ python manage.py runserver
 ```
 
 
+[![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
+
+## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Funcionalidades
+
+#### 📌 Home
+> Página inicial com alguns dados e links para a aplicação
+
+![Página Inicial](./media/images/Pagina-Inicial.png)
+
+#### 📌 Animais
+
+> Listar animais disponíveis para adoção
+
+![Animais](./media/images/Animais.png)
+
+> Dentro dessa página é possível ver detalhes de cada animal clicando em cima das informações dele
+
+![Ver animal](./media/images/Ver-animal.png)
+
+> Busque seu amigo - Filtra os animais de acordo com a espécie
+
+![Filtro](./media/images/filtro.png)
+
+#### 📌 Adoção
+
+> Para solicitar a adoção de animais disponíveis
+
+![Adoção](./media/images/Adotar.png)
+
+
+#### 📌 Voluntários
+
+> Para se cadastrar como voluntário do abrigo
+
+![Voluntários](./media/images/Voluntarios.png)
+
+
+#### 📌 Conheça o projeto
+
+> Redireciona para esse repositório
+
+![Footer](./media/images/Footer.png)
+
+#### 📌 Administrativo
+
+> Área para acesso da parte administrativa, para cadastro de animais, de funcionários, de voluntários, bem como aprovação ou reprovação de adoção
+
+![Administrativo](./media/images/Admin.png)
+
 
 [![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
 
-## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Exemplos
+## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Deploy
 
-Exemplos de uso do projeto, com imagens.
-
-[![Retornar ao índice](https://img.shields.io/badge/Retornar%20ao%20%C3%ADndice-Verde%20Escuro?color=%23006400&style=flat&labelColor=%23006400&logo=github)](#retornar-ao-índice)
+É possível acessar nossa aplicação através do link:
+[Clique aqui](https://squadcarmenportinho.pythonanywhere.com/)
 
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20px;"/> Integrantes
 
